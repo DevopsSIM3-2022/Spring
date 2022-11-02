@@ -29,6 +29,7 @@ pipeline{
         stage('Cleaning the project') {
             steps{
                 	sh "mvn -B -DskipTests clean  "
+                    sh "mvn install  "
             }
         }
 
