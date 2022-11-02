@@ -90,7 +90,7 @@
                             <goal>deploy-file</goal>
                         </goals>
                         <configuration>
-                            <file>achat</file>
+                            <file>deploy-file</file>
                             <groupId>${groupId}</groupId>
                             <artifactId>${artifactId}</artifactId>
                             <version>${version}</version>
