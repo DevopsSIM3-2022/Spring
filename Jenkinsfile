@@ -50,8 +50,8 @@ pipeline{
         }
 
 
-
-       /* stage('Code Quality Check via SonarQube') {
+/*
+        stage('Code Quality Check via SonarQube') {
             steps{
 
              		sh " mvn sonar:sonar -Dsonar.projectKey=backspring -Dsonar.host.url=http://192.168.1.31:9000 -Dsonar.login=d76baec792c8b69cb7aa6b22ee2f97efd83860b0"
@@ -64,7 +64,7 @@ pipeline{
             steps {
 
 
-  sh 'mvn deploy'
+  sh 'mvn clean package deploy:deploy-file -DgroupId=tn.esprit.rh -DartifactId=achat -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://192.168.1.31:8081/repository/maven-releases/ -Dfile=target/achat-1.0.jar'
 
 
             }
