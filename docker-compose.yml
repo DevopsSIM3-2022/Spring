@@ -19,7 +19,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image:  azizbenhaha/spring-app
+    image:  status404/spring-app
     restart: on-failure
     env_file: ./.env
     ports:
