@@ -102,7 +102,7 @@ stage('Build Docker Image') {
 	    
         post {
         always {
-            cleanWs()
+          //  cleanWs()
         }
     }
 
