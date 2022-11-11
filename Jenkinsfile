@@ -37,7 +37,7 @@ pipeline{
 
         stage('Artifact Construction') {
             steps{
-                	sh "mvn -B -DskipTests package "
+                	sh "mvn package -Dmaven.test.skip=true -P test-coverage"
             }
         }
 
@@ -50,14 +50,14 @@ pipeline{
         }
 
 
-        stage('Code Quality Check via SonarQube') {
+        /*stage('Code Quality Check via SonarQube') {
             steps{
 
                     //sh " mvn sonar:sonar -Dsonar.projectKey=backspring -Dsonar.host.url=http://localhost:9000 -Dsonar.login=1a5328b57bc34694e8cf96784404bc0f1df0dae8"
              		sh " mvn sonar:sonar -Dsonar.projectKey=backspring -Dsonar.host.url=http://localhost:9000 -Dsonar.login=d76baec792c8b69cb7aa6b22ee2f97efd83860b0"
 
             }
-        }
+        }*/
 
         stage('Publish to Nexus') { 
             steps {
