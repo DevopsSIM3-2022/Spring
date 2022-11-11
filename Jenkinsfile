@@ -10,8 +10,8 @@ pipeline{
 
  stage('preparation : start sonar, nexus') {
             steps{
-                	sh "docker start 5f9"
-                	sh "docker start 5ed"
+                	/*sh "docker start 5f9"
+                	sh "docker start 5ed"*/
             }
         }
 
@@ -97,11 +97,6 @@ stage('Build Docker Image') {
                                     }
                                 }
                             }
-
-	    
-
-
-
      
 }
 
