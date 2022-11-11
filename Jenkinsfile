@@ -58,7 +58,6 @@ pipeline{
             }
         }
 
-/*
         stage('Publish to Nexus') { 
             steps {
 
@@ -68,7 +67,7 @@ pipeline{
 
             }
         }
-*/
+
 stage('Build Docker Image') {
                       steps {
                           script {
