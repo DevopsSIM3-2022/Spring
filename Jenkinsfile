@@ -79,7 +79,7 @@ stage('Build Docker Image') {
 
                   stage('login dockerhub') {
                                         steps {
-                                      sh 'echo dckr_pat_FuLeu62QKYn3b7vH1kumw_vwrTk | docker login -u status404 --password-stdin'
+                                      sh 'docker login -u status404 -p dckr_pat_FuLeu62QKYn3b7vH1kumw_vwrTk'
                                             }
 		  }
 	    
