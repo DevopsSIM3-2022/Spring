@@ -94,7 +94,7 @@ stage('Build Docker Image') {
 		   stage('Run Spring && MySQL Containers') {
                                 steps {
                                     script {
-                                      sh 'docker-compose up -d'
+                                      sh 'sudo docker-compose up -d'
                                     }
                                 }
                             }
