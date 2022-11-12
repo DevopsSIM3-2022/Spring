@@ -37,7 +37,8 @@ pipeline{
 
         stage('Artifact Construction') {
             steps{
-                	sh "mvn package -Dmaven.test.skip=true -P test-coverage"
+                	//sh "mvn package -Dmaven.test.skip=true -P test-coverage"
+                    sh "mvn -B -DskipTests package"
             }
         }
 
@@ -83,7 +84,7 @@ stage('Build Docker Image') {
                                             }
 		  }
 	    
-	                      stage('Push Docker Image') {
+	              stage('Push Docker Image') {
                                         steps {
                                    sh 'docker push status404/spring-app:latest'
                                             }
