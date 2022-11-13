@@ -34,7 +34,7 @@ services:
         "spring.jpa.hibernate.ddl-auto" : "update"
       }'
     volumes:
-      - .m2:/root/.m2
+      - .m2:/sonar-nexus/Spring-app-cache
     restart: on-failure
     stdin_open: true
     tty: true
