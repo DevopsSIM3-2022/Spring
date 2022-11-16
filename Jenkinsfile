@@ -8,12 +8,12 @@ pipeline{
     stages {
 
 
- stage('preparation : start sonar, nexus') {
+        /*stage('preparation : start sonar, nexus') {
             steps{
                 	sh "docker start d94"
                 	sh "docker start 0f3"
             }
-        }
+        }*/
 
 
         stage('Getting project from Git') {
@@ -28,8 +28,8 @@ pipeline{
 
         stage('Cleaning the project') {
             steps{
-                	sh "mvn -B -DskipTests clean  "
-                    sh "mvn install  "
+                	sh "mvn -B -DskipTests clean"
+                    sh "mvn install "
             }
         }
 
@@ -79,8 +79,8 @@ stage('Build Docker Image') {
 
                   stage('login dockerhub') {
                                         steps {
-                                      sh 'echo dckr_pat_IGzrU64ntM8f_dw9HPZ9Wh0OcMk | docker login -u 07495014 --password-stdin'
-                                            }
+                                      sh 'docker login -u 07495014 -p dckr_pat_IGzrU64ntM8f_dw9HPZ9Wh0OcMk'
+                            
 		  }
 	    
 	                      stage('Push Docker Image') {
