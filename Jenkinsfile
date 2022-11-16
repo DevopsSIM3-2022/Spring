@@ -69,7 +69,7 @@ pipeline{
             }
         }
 
-stage('Build Docker Image') {
+        stage('Build Docker Image') {
                       steps {
                           script {
                             sh 'docker build -t 07495014/spring-app:latest .'
@@ -80,8 +80,8 @@ stage('Build Docker Image') {
                   stage('login dockerhub') {
                                         steps {
                                       sh 'docker login -u 07495014 -p dckr_pat_IGzrU64ntM8f_dw9HPZ9Wh0OcMk'
-                            
-		  }
+                            }
+                  }
 	    
 	                      stage('Push Docker Image') {
                                         steps {
