@@ -22,6 +22,7 @@ services:
     image:  07495014/spring-app
     restart: on-failure
     env_file: ./.env
+    user: root
     ports:
       - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
     environment:
@@ -33,7 +34,8 @@ services:
         "spring.jpa.hibernate.ddl-auto" : "update"
       }'
     volumes:
-      - .m2:/root/.m2
+      - .m2:/sonar-nexus/Spring-app-cache
+    restart: on-failure
     stdin_open: true
     tty: true
 
