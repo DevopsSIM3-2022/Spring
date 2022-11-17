@@ -56,12 +56,11 @@
     </dependencies>
 
          <distributionManagement>
-<repository>
-<id>deploymentRepo</id>
-<name>Nexus Repository</name>
-<url>http://192.168.43.222:8081/repository/maven-releases/</url>
-</repository>
-</distributionManagement>
+		<repository>
+		<id>deploymentRepo</id>
+		<url>http://192.168.43.222:8081/repository/maven-releases/</url>
+		</repository>
+		</distributionManagement>
          
     <build>
         <plugins>
